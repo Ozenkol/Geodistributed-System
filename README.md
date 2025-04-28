@@ -1,29 +1,29 @@
-# Report: Geo-Distributed Systems
+# Geo-Distributed Systems
 
 ## 1. Problem Background
-When building critical IT systems — for banking, healthcare, aviation — reliability becomes extremely important. A single failure can cause enormous losses. Local infrastructure, even with good redundancy, cannot fully protect against rare but catastrophic events like accidental cable damage by an excavator.
+When developing crucial IT systems for financial institutions, healthcare providers, and airlines, ensuring reliability is of utmost importance. A single service can result in substantial financial losses. Even with a robust backup system in place, local infrastructure is not sufficient to prevent rare but disastrous incidents, such as accidental cable damage caused by a cataclisms.
 
-To reduce risks, engineers create geo-distributed systems: the same services operate simultaneously across multiple data centers, often in different cities and countries.
+To reduce risks, engineers create geo-distributed systems the same services operate simultaneously across multiple data centers, often in different cities and countries.
 
 ## 2. Requirements for Solving the Problem
 The key requirements for such a system are:
 
-- **High reliability** — the system must continue functioning even if one data center completely fails.
-- **Operation under network failures** — inter-data-center networks are inherently unreliable.
-- **Data consistency** — to avoid user errors, like getting two horses instead of one (example from a game store).
+- **High reliability** — the system must  functioning even if one data center completely fails.
+- **Operation under network failures** — computer networks are inherently unreliable.
+- **Data consistency** — To prevent user mistakes, such as purchasing two horses instead of one (an example from a game store).
 - **Acceptable response time** — users shouldn't have to wait 10 seconds for a reply.
 
 These requirements lead to a necessary choice between:
 
 - **Strict synchronization** (slow but accurate),
-- **Asynchronous processing** (fast but potential inconsistencies).
+- **Asynchronous processing** (fast but potential anticonsistencies).
 
 ## 3. Modeling the Situation
-The situation can be described mathematically using the **CAP theorem**:
+The situation can be described formally using the **CAP theorem**:
 
-- **Consistency** — strict data accuracy,
-- **Availability** — system responsiveness,
-- **Partition tolerance** — resilience to network splits.
+- **Consistency** — data accuracy,
+- **Availability** — system availability,
+- **Partition tolerance** — resilience to network crash.
 
 In geo-distributed systems, **Partition Tolerance** is mandatory, meaning we must choose between **Consistency** and **Availability**.
 
